@@ -12,7 +12,7 @@ class CategoriesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Target Meals',
+          'Supa Pac',
           style: GoogleFonts.ubuntu(
             fontSize: 23,
           ),

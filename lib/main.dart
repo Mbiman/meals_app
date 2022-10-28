@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
       themeMode: ThemeMode.system,
-      home: const CategoriesScreen(),
       routes: {
-        '/category-meals': (context) => CategoryMealsScreen(),
+        '/': (context) => const CategoriesScreen(),
+        CategoryMealsScreen.namedRoute: (context) =>
+            const CategoryMealsScreen(),
       },
     );
   }
