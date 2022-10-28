@@ -19,6 +19,7 @@ class CategoriesScreen extends StatelessWidget {
         ),
       ),
       body: GridView(
+        padding: const EdgeInsets.all(20),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
@@ -26,7 +27,11 @@ class CategoriesScreen extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         children: DUMMY_CATEGORIES.map((cat) {
-          return CategoryItem(title: cat.title, color: cat.color);
+          return CategoryItem(
+            title: cat.title,
+            color: cat.color,
+            img: cat.imgName,
+          );
         }).toList(),
       ),
     );
