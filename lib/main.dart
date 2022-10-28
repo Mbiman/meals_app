@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meals_app/screens/categories_meals_screen.dart';
 import 'package:meals_app/screens/categories_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
       darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
       themeMode: ThemeMode.system,
       home: const CategoriesScreen(),
+      routes: {
+        '/category-meals': (context) => CategoryMealsScreen(),
+      },
     );
   }
 }
