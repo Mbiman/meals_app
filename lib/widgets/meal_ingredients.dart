@@ -21,7 +21,7 @@ class Ingredients extends StatelessWidget {
         itemCount: selectedMeal.ingredients.length,
         itemBuilder: (context, index) {
           return Card(
-            color: Theme.of(context).focusColor,
+            color: Theme.of(context).cardTheme.color,
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 5,
