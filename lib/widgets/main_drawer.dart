@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meals_app/screens/settings_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
 
-  Widget buildListTile({required String title, required IconData icon}) {
+  Widget buildListTile(
+      {required String title,
+      required IconData icon,
+      required VoidCallback onTap}) {
     return ListTile(
       leading: Icon(
         icon,
         size: 26,
       ),
       title: Text(title),
+      onTap: onTap,
     );
   }
 
@@ -38,8 +43,20 @@ class MainDrawer extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          buildListTile(title: 'Meals', icon: Icons.restaurant),
-          buildListTile(title: 'Settings', icon: Icons.settings),
+          buildListTile(
+            title: 'Meals',
+            icon: Icons.restaurant,
+            onTap: () {
+              Navigator.of(context).pushNamed('/');
+            },
+          ),
+          buildListTile(
+            title: 'Settings',
+            icon: Icons.settings,
+            onTap: () {
+              Navigator.of(context).pushNamed(SettingsScreen.namedRoute);
+            },
+          ),
         ],
       ),
     );
