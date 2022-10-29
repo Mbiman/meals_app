@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/widgets/main_drawer.dart';
 
 class SettingsScreen extends StatelessWidget {
   static const namedRoute = 'settings-screen';
@@ -6,8 +7,12 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Settings'),
+      ),
+      drawer: const MainDrawer(),
+      body: const Center(
         child: Text('Settings'),
       ),
     );
