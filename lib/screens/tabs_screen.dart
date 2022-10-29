@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_app/screens/categories_screen.dart';
 import 'package:meals_app/screens/favouites_screen.dart';
 
+import '../widgets/main_drawer.dart';
+
 class TabsScreen extends StatefulWidget {
   const TabsScreen({Key? key}) : super(key: key);
 
@@ -36,6 +38,7 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
         ),
       ),
+      drawer: const MainDrawer(),
       body: _pages[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
