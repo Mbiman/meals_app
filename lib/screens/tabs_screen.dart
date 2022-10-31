@@ -3,20 +3,30 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_app/screens/categories_screen.dart';
 import 'package:meals_app/screens/favouites_screen.dart';
 
+import '../models/meal.dart';
 import '../widgets/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({Key? key}) : super(key: key);
+  final List<Meal> favouriteMeals;
+  const TabsScreen({Key? key, required this.favouriteMeals}) : super(key: key);
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  final List<Widget> _pages = [
-    const CategoriesScreen(),
-    const FavouritesScreen(),
-  ];
+  late List<Widget> _pages;
+
+  @override
+  void initState() {
+    _pages = [
+      const CategoriesScreen(),
+      FavouritesScreen(
+        favouriteMeals: widget.favouriteMeals,
+      ),
+    ];
+    super.initState();
+  }
 
   int _selectedPageIndex = 0;
 

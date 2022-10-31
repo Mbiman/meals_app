@@ -7,7 +7,11 @@ import '../data/dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const namedRoute = '/meal-details';
-  const MealDetailScreen({Key? key}) : super(key: key);
+  final Function toggleFav;
+  final Function isMealFav;
+  const MealDetailScreen(
+      {Key? key, required this.toggleFav, required this.isMealFav})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +45,9 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pop(mealId);
-        },
-        child: const Icon(
-          Icons.delete,
+        onPressed: () => toggleFav(mealId),
+        child: Icon(
+          isMealFav(mealId) ? Icons.star : Icons.star_border,
         ),
       ),
     );
